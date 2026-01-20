@@ -1,7 +1,7 @@
 package edu.fgiaquintaruiz.ecommerceapi.persistence.jdbc.entity
 
 import edu.fgiaquintaruiz.ecommerceapi.model.Order
-import edu.fgiaquintaruiz.ecommerceapi.domain.model.OrderItem
+import edu.fgiaquintaruiz.ecommerceapi.model.OrderItem
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.MappedCollection
 import org.springframework.data.relational.core.mapping.Table

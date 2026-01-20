@@ -3,7 +3,7 @@ package edu.fgiaquintaruiz.ecommerceapi.persistence.adapter
 import edu.fgiaquintaruiz.ecommerceapi.model.Order
 import edu.fgiaquintaruiz.ecommerceapi.port.output.OrderRepositoryPort
 import edu.fgiaquintaruiz.ecommerceapi.persistence.jdbc.OrderJdbcRepository
-import edu.fgiaquintaruiz.ecommerceapi.infrastructure.persistence.jdbc.entity.OrderEntity
+import edu.fgiaquintaruiz.ecommerceapi.persistence.jdbc.entity.OrderEntity
 import org.springframework.stereotype.Component
 
 @Component

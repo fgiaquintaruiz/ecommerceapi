@@ -29,3 +29,8 @@ dependencies {
 tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
     mainClass.set("edu.fgiaquintaruiz.ecommerceapi.EcommerceApiApplicationKt")
 }
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+    jvmArgs("-Dnet.bytebuddy.experimental=true")
+}
