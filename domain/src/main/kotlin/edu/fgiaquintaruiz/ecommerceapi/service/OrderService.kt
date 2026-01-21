@@ -1,5 +1,6 @@
 package edu.fgiaquintaruiz.ecommerceapi.service
 
+import edu.fgiaquintaruiz.ecommerceapi.annotation.DomainService
 import edu.fgiaquintaruiz.ecommerceapi.exception.InsufficientStockException
 import edu.fgiaquintaruiz.ecommerceapi.exception.ProductNotFoundException
 import edu.fgiaquintaruiz.ecommerceapi.model.Order
@@ -10,6 +11,7 @@ import edu.fgiaquintaruiz.ecommerceapi.port.output.OrderRepositoryPort
 import edu.fgiaquintaruiz.ecommerceapi.port.output.ProductRepositoryPort
 import java.util.stream.Collectors
 
+@DomainService
 class OrderService(
     private val productRepository: ProductRepositoryPort,
     private val orderRepository: OrderRepositoryPort
