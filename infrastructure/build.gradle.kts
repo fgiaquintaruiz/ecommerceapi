@@ -16,6 +16,9 @@ dependencies {
     implementation(libs.spring.boot.starter.data.jdbc)
     implementation(libs.flyway.core)
     implementation(libs.flyway.database.postgresql)
+    implementation(libs.springdoc.openapi)
+    implementation(libs.kotlin.reflect)
+    implementation(libs.spring.boot.starter.validation)
     runtimeOnly(libs.postgresql)
 
     // Testing

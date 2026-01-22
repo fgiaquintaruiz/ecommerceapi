@@ -1,31 +1,40 @@
 server:
-  port: 8080
+  server:
+    port: 8080
+    servlet:
+      context-path: /ecommerce
 
 spring:
-  flyway:
-    enabled: true
-    baseline-on-migrate: true # Useful if you are adding Flyway to an existing DB
+  # English: This section is now GLOBAL and will work on 'default' profile
   datasource:
-    url: jdbc:postgresql://localhost:5432/ecommerce_db
+    url: jdbc:postgresql://localhost:5454/ecommerce_db
     username: admin
     password: password
     driver-class-name: org.postgresql.Driver
 
-  jpa:
-    hibernate:
-      # 'update' for dev. 'validate' for prod
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
 
-  config:
-    activate:
-      on-profile: dev
+  # English: IMPORTANT - Since we use Spring Data JDBC, remove the JPA/Hibernate block.
+  # We don't need Hibernate as it might conflict or try to scan for Entities.
+  data:
+    jdbc:
+      repositories:
+        enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+logging:
+  level:
+    org.springframework.jdbc.core.JdbcTemplate: DEBUG
 
 ---
+# English: Specific profile for testing
 spring:
   config:
     activate:
@@ -34,7 +43,4 @@ spring:
     url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
     username: sa
-    password:
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
+    password: ""
